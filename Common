@@ -1,0 +1,14 @@
+package Bai1;
+
+public class Common {
+
+	public static int getInt(String string) {
+		return 0;
+	}
+
+	public static String getStrings(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
