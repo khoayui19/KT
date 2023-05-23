@@ -1,0 +1,49 @@
+package Bai1;
+
+ class phongTN extends phonghoc{
+	 private String ttcn;
+	 private String succhua;
+	 private String bonrua;
+	 
+	 public phongTN() {
+		 super();
+	 }
+	 public phongTN(String ttcn, String succhua, String bonrua) {
+		 super();
+		 this.setTtcn(ttcn);
+		 this.succhua= succhua;
+		 this.bonrua= bonrua;
+	 }
+	 public String getTtcn() {
+			return ttcn;
+		}
+		public void setTtcn(String ttcn) {
+			this.ttcn = ttcn;
+		}
+		public String getSucchua() {
+			return succhua;
+		}
+		public void setSucchua(String succhua) {
+			this.succhua = succhua;
+		}
+		public String getBonrua() {
+			return bonrua;
+		}
+		public void setBonrua(String bonrua) {
+			this.bonrua = bonrua;
+		}
+		public void nhap() {
+			super.nhap();
+			System.out.print("Nhap thong tin chuyen nganh: ");
+			ttcn= scanner.nextLine();
+			System.out.print("Nhap suc chua: ");
+			succhua = scanner.nextLine();
+			System.out.print("Nhap bon rua: ");
+			bonrua = scanner.nextLine();
+		}
+		@Override
+		public String toString() {
+			return super.toString() + ", thong tin chuyen nganh :" + this.ttcn + ",suc chua :" + this.succhua + ", bon rua:"+ this.bonrua;
+		}
+
+}
