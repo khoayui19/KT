@@ -1,0 +1,155 @@
+package Bai1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AL {
+	private List<phonghoc> listphonghoc = new ArrayList<phonghoc>();
+	@SuppressWarnings("unused")
+	private phonghoc find1ByMa(String maphong) {
+		for (phonghoc phonghoc : listphonghoc) {
+			if(phonghoc.getMaphong().equals(maphong)) {
+				return phonghoc;
+			}
+		}	
+		return null;
+	}
+	private List<phonghoc> sortByDayNha(){
+	 List<phonghoc> listphonghoc1 = this.listphonghoc;
+	return listphonghoc1;
+		listphonghoc1.sort((o1, o2)->o1.getDaynha() - o2.getDaynha())));
+		this.listphonghoc = listphonghoc1;
+				return listphonghoc1;
+	}
+	private List<phonghoc> sortByDienTich(){
+		List<phonghoc> listphonghoc1 = this.listphonghoc;
+		listphonghoc1.sort((o1, o2)-> (int) (o1.getDientich() - o2.getDientich()));
+		this.listphonghoc = listphonghoc1;
+				return listphonghoc1;
+	}
+	private List<phonghoc> sortBySoBongDen(){
+		List<phonghoc> listphonghoc1 = this.listphonghoc;
+		return listphonghoc1;
+		listphonghoc1.sort((o1, o2)->o1.getSobongden() - o2.getSobongden())));
+		this.listphonghoc = listphonghoc1;
+				return listphonghoc1;
+	}
+	@SuppressWarnings("unused")
+	private void nhap ( List<phonghoc> listphonghoc1) {
+		System.out.println(String.format("%20s %10s %15s %10s", "maphong", "daynha", "dientich", "sobongden"));
+			for (phonghoc phonghoc : listphonghoc) {
+				System.out.println(phonghoc);
+			}
+	}
+	private List<phonghoc> checklistdattieuchuan() {
+		System.out.println("List phong dat tieu chuan");
+		System.out.println(String.format("%20s %10s %15s %10s", "maphong", "daynha", "dientich", "sobongden"));
+		for (phonghoc phonghoc : this.listphonghoc) {
+			if (phonghoc.isphongdattieuchuan()) {
+				System.out.println(phonghoc);
+			}
+		}
+		return listphonghoc;
+	}
+	@SuppressWarnings("unused")
+	private void updatephongMT(String maphong, int maytinh) {
+	Object phonghoc = null;
+	if (phonghoc !=null)
+		extracted(maphong, maytinh, phonghoc);
+	}
+	private void extracted(String maphong, int maytinh, Object phonghoc) {
+		{
+			((Bai1.phongMT) phonghoc).setMaytinh(maytinh);
+			for(int i=0; i<listphonghoc.size(); i++)
+			{
+				if(listphonghoc.get(i).getMaphong().equals(maphong)) {
+					listphonghoc.remove(i);
+					listphonghoc.add(i, (Bai1.phonghoc) phonghoc);
+				}
+			}
+		}
+	}
+	private void init() {
+		this.listphonghoc.add(new phongMT("1",1, 100, 10, 2));
+		this.listphonghoc.add(new phongMT("2",2, 200, 20, 4));
+		this.listphonghoc.add(new phongMT("3",3, 300, 30, 6));
+		this.listphonghoc.add(new phongMT("4",4, 400, 40, 8));
+		this.listphonghoc.add(new phongTN("5",1, 100, 10,"TECH", 2, true));
+		this.listphonghoc.add(new phongTN("6",2, 200, 20,"TECH", 4, true));
+		this.listphonghoc.add(new phongTN("7",3, 300, 30,"TECH", 6, true));
+		this.listphonghoc.add(new phongTN("8",4, 400, 40,"TECH", 8, true));
+		this.listphonghoc.add(new phongLT("9",1, 100, 10, true));
+		this.listphonghoc.add(new phongLT("10",2, 200, 20, true));
+		this.listphonghoc.add(new phongLT("11",3, 300, 30, true));
+		this.listphonghoc.add(new phongLT("12",4, 400, 40, true));
+	}
+	private void menu() {
+		System.out.println("1. add phong may tinh");
+		System.out.println("2. add phong thi nghiem");
+		System.out.println("3. add phong ly thuyet");
+		System.out.println("4. update so may tinh trong phong");
+		System.out.println("5. sort by so may chieu");
+		System.out.println("6. sort by dien tich");
+		System.out.println("7. sort by day nha");
+		System.out.println("8. sort by so bong den");
+		System.out.println("9. in tat ca cac phong");
+		System.out.println("10. add phong may tinh");
+		System.out.println("11. add phong may tinh");
+		int choice = Common.getInt("Lua chon:");
+		menu(choice);
+	}
+	private void menu(int choice) {
+		switch(choice) {
+		case 1:
+			this.listphonghoc.add(phongMT.input((listphonghoc.size()+"")));
+			break;
+	    case 2:
+	     	this.listphonghoc.add(phongTN.input((listphonghoc.size()+"")));
+		    break;
+        case 3:
+	        this.listphonghoc.add(phongLT.input((listphonghoc.size()+"")));
+	        break;
+case 4:
+	String maphong = Common.getStrings("Dong y ma phong:");
+	int daynha = Common.getInt("Dong y so may tinh:");
+	this.updatephongMT(maphong, daynha);
+	break;
+case 5:
+	this.in(this.sortByDayNha());
+	break;
+case 6:
+	this.in(this.sortByDienTich());
+	break;
+case 7:
+	this.in(this.sortByDayNha());
+	break;
+case 8:
+	this.in(this.sortBySoBongDen());
+	break;
+case 9:
+	this.in(this.listphonghoc());
+	break;
+case 10:
+	this.in(this.checklistdattieuchuan());
+	break;
+case 11:
+	System.exit(0);
+	break;
+}
+}
+private void in(Object sortByDayNha) {
+		// TODO Auto-generated method stub
+		
+	}
+
+private List<phonghoc> listphonghoc() {
+		// TODO Auto-generated method stub
+		return null;
+}
+public void Start() {
+	this.init();
+	while(true) {
+		this.menu();
+	}
+}
+}
