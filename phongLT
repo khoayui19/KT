@@ -1,0 +1,30 @@
+package Bai1;
+
+ class phongLT extends phonghoc{
+	 private String maychieu;
+	 public phongLT() {
+		 super();
+	 }
+	 public phongLT(String maychieu) {
+		 super();
+		 this.maychieu= maychieu;
+	 }
+
+	public String getMaychieu() {
+		return maychieu;
+	}
+
+	public void setMaychieu(String maychieu) {
+		this.maychieu = maychieu;
+	}
+	public void nhap() {
+		super.nhap();
+		System.out.print("Nhap so may chieu hien co: ");
+		maychieu = scanner.nextLine();
+	}
+	@Override
+	public String toString() {
+		return super.toString() + ", may chieu :" + this.maychieu;
+	}
+
+}
