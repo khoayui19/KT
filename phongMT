@@ -1,0 +1,28 @@
+package Bai1;
+
+ class phongMT extends phonghoc{
+	 private int maytinh;
+	 public phongMT() {
+		 super();
+	 }
+	 public phongMT(int maytinh) {
+		 super();
+		 this.maytinh= maytinh;
+	 }
+		public int getMaytinh() {
+			return maytinh;
+		}
+
+		public void setMaytinh(int maytinh) {
+			this.maytinh = maytinh;
+		}
+		public void nhap() {
+			super.nhap();
+			System.out.print("Nhap so may tinh hien co: ");
+			maytinh = scanner.nextInt();
+		}
+		@Override
+		public String toString() {
+			return super.toString() + ", may tinh :" + this.maytinh;
+		}
+}
