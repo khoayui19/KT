@@ -1,0 +1,59 @@
+package Bai1;
+
+import java.util.Scanner;
+
+public class phonghoc {
+	private String maphong;
+	private String daynha;
+	private int dientich;
+	private String sobongden;
+	Scanner scanner = new Scanner(System.in);
+	
+	public phonghoc(){
+		super();
+	}
+	public phonghoc(String maphong, String daynha, int dientich,String sobongden) {
+		super();
+		this.maphong= maphong;
+		this.daynha= daynha;
+		this.dientich= dientich;
+		this.sobongden= sobongden;
+	}
+	public String getMaphong() {
+		return maphong;
+	}
+	public void setMaphong(String maphong) {
+		this.maphong = maphong;
+	}
+	public String getDaynha() {
+		return daynha;
+	}
+	public void setDaynha(String daynha) {
+		this.daynha = daynha;
+	}
+	public int getDientich() {
+		return dientich;
+	}
+	public void setDientich(int dientich) {
+		this.dientich = dientich;
+	}
+	public String getSobongden() {
+		return sobongden;
+	}
+	public void setSobongden(String sobongden) {
+		this.sobongden = sobongden;
+	}
+	public void nhap() {
+		System.out.print("Nhap ma phong");
+		maphong = scanner.nextLine();
+		System.out.print("Nhap day nha");
+		daynha = scanner.nextLine();
+		System.out.print("Nhap dientich");
+		dientich = scanner.nextInt();
+		System.out.print("Nhap so bong den");
+		sobongden = scanner.nextLine();
+	}
+	@Override
+	public String toString() {
+		return "Ma phong: " + this.maphong + ",day nha: " + this.daynha +", dien tich : " + this.dientich + ", so bong den :" + this.sobongden;
+	}
